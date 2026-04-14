@@ -1,0 +1,64 @@
+# Environment
+.env
+.env.*
+!.env.example
+.venv
+venv/
+env/
+python_env/
+
+# Data & Databases
+*.db
+*.sqlite3
+*.duckdb
+.vault.key
+temp/
+tmp/
+logs/
+*.log
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+build/
+dist/
+.vercel
+.turbo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# IDEs & System
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project Specific
+vexa/node_modules/
+vexa/**/node_modules/
+vexa/build/
+vexa/dist/
+vexa/.next/
+vexa/__pycache__/
+vexa/*.db
+vexa/*.sqlite3

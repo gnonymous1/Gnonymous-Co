@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════════════════════════
+   APEX CONTENT OS — MODERN SAAS DESIGN SYSTEM
+   Proprietary Brand Styling & Global Tokens
+   ══════════════════════════════════════════════════════════ */
+
+@import "tailwindcss";
+
+:root {
+  /* Luxe Dark Palette (Primary) */
+  --canvas:         #09090b; /* Zinc 950 */
+  --surface-0:      #111114; /* Elevated */
+  --surface-1:      #18181b; /* Zinc 900 */
+  --surface-2:      #27272a; /* Zinc 800 */
+  --surface-3:      #3f3f46; /* Zinc 700 */
+  --surface-inverse: #ffffff;
+
+  /* Brand Accents (Emerald Professional) */
+  --brand-primary:   #10b981; /* Emerald 500 */
+  --brand-secondary: #0ea5e9; /* Sky 500 */
+  --brand-tertiary:  #6366f1; /* Indigo 500 */
+  --brand-accent:    #f59e0b; /* Amber 500 */
+  
+  --brand-glow:      rgba(16, 185, 129, 0.15);
+  --brand-border:    rgba(16, 185, 129, 0.2);
+
+  /* Semantic Feedback */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger:  #ef4444;
+  --info:    #3b82f6;
+
+  /* Typography - Inter (Clean Professional) */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Text Hierarchy */
+  --text-1: #fafafa;
+  --text-2: #e4e4e7; /* Zinc 200 */
+  --text-3: #a1a1aa; /* Zinc 400 */
+  --text-4: #52525b; /* Zinc 600 */
+
+  /* Shadows - Sophisticated & Soft */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.7);
+  --shadow-luxe: 0 0 40px -10px var(--brand-glow);
+
+  /* Radius - Modern Rounding */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── BASE ───────────────────────────────────────────────────────────────── */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--canvas);
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── LAYOUT UTILITIES ──────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.luxe-card {
+  background: var(--surface-1);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.luxe-card:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── TYPOGRAPHY CLASSES ─────────────────────────────────────────────────── */
+.title-hero {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--text-1);
+}
+
+.title-section {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+
+.text-caption {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-4);
+}
+
+/* ─── COMPONENT STYLES ───────────────────────────────────────────────────── */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: #fff;
+  box-shadow: 0 4px 0 rgba(6, 78, 59, 0.5); /* Emerald 900 offset */
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 rgba(6, 78, 59, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 rgba(6, 78, 59, 0.5);
+}
+
+.btn-secondary {
+  background: var(--surface-2);
+  color: var(--text-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+
+/* Inputs */
+.luxe-input {
+  background: var(--surface-0);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-sm);
+  padding: 10px 14px;
+  color: var(--text-1);
+  transition: all var(--transition-fast);
+}
+
+.luxe-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-glow);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-new { background: rgba(14, 165, 233, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2); }
+.badge-pro { background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.2); }
+.badge-success { background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.2); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--canvas); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 10px; border: 2px solid var(--canvas); }
+::-webkit-scrollbar-thumb:hover { background: var(--surface-3); }
+
+/* ─── ANIMATIONS ─────────────────────────────────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s var(--transition-normal) forwards;
+}
+
+/* Legacy Support & Shadow Aliases */
+.glass-card { @extend .luxe-card; }
+.btn-ghost { @extend .btn-secondary; background: transparent; border-color: transparent; }
+.btn-ghost:hover { background: rgba(255,255,255,0.05); }
